@@ -1,9 +1,10 @@
 const http = require("http");
 const app = require("./app");
 const { connectDb } = require("./config/db");
-const { env } = require("./config/env");
+const { env, validateEnv } = require("./config/env");
 
 async function main() {
+  validateEnv();
   await connectDb(env.MONGO_URI);
 
   const server = http.createServer(app);
@@ -18,4 +19,3 @@ main().catch((err) => {
   console.error("Failed to start server:", err);
   process.exit(1);
 });
-

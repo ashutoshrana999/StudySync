@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "StudySync backend (Express + MongoDB + JWT + QR attendance + invoices).",
   "main": "server.js",
+  "engines": {
+    "node": ">=20 <25"
+  },
   "scripts": {
     "dev": "node --watch server.js",
     "start": "node server.js",
